@@ -9,7 +9,10 @@ import { TasksModule } from './tasks/tasks.module';
     TypeOrmModule.forRootAsync({
       useFactory: () => {
         return {
+          logging: true,
           type: 'postgres',
+          synchronize: false,
+          autoLoadEntities: true,
           url: process.env.DB_CONN,
         }
       }

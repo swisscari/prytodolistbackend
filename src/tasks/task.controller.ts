@@ -1,5 +1,5 @@
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put, Version } from '@nestjs/common';
 
 import { TaskDto } from './dtos/task.dto';
 import { TaskService } from './task.service';
@@ -13,7 +13,7 @@ export class TaskController {
 
     @Get()
     @ApiResponse({ type: [Task] })
-    getTasks(): Promise<Task[]> {
+    async getTasks(): Promise<Task[]> {
         return this.taskService.getTasks()
     }
 
