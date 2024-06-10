@@ -6,12 +6,12 @@ export class TaskDto {
 
     @ApiProperty()
     @IsString({ message: 'Title required' })
-    @Matches(/^[\w\s_]+$/im, { message: 'Title not valid' })
+    @Matches(/^[\w\s_,.]+$/im, { message: 'Title not valid' })
     title: string;
 
     @ApiProperty()
     @IsString({ message: 'Description required' })
-    @Matches(/^[\w\s_]+$/im, { message: 'Description not valid' })
+    @Matches(/^[\w\s_,.]+$/im, { message: 'Description not valid' })
     description?: string;
 
     @ApiProperty()
